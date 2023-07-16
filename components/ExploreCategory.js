@@ -14,7 +14,7 @@ import { motion as m } from "framer-motion";
 export default function ExploreCategory() {
   return (
     <Element name="categories">
-      <div className="md:max-w-[84%] max-w-[79%] m-auto mt-10">
+      <div className="md:max-w-[84%] max-w-[79%] m-auto mt-32">
         <div className="flex flex-row-reverse items-center gap-4">
           <m.h1
             initial={{ opacity: 1, x: 30 }}

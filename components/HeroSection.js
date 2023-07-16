@@ -59,7 +59,7 @@ export default function Herosection() {
               smooth={true}
               delay={150}
               duration={1600}
-              offset={40}
+              offset={-50}
             >
               <m.button
                 initial={{ opacity: 0, x: -40 }}

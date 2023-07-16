@@ -147,8 +147,7 @@ export default function ExploreOther() {
               className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
             >
               Explore All Products
-              <m.svg
-                whileHover={{ x: 7 }}
+              <svg 
                 width="25"
                 height="25"
                 viewBox="0 0 25 25"
@@ -169,7 +168,7 @@ export default function ExploreOther() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-              </m.svg>
+              </svg>
             </Link>
           </m.div>
         </div>

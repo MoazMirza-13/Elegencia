@@ -41,8 +41,8 @@ const Navbar = () => {
   const navLi = [
     { id: "home", title: "Home", offset: -90 },
     { id: "products", title: "Products", offset: -125 },
-    { id: "categories", title: "Categories", offset: -60 },
-    { id: "testimonials", title: "Testimonials", offset: -60 },
+    { id: "categories", title: "Categories", offset: -85 },
+    { id: "testimonials", title: "Testimonials", offset: -88 },
     { id: "contact us", title: "Contact Us" },
   ];
   const navLiMobile = [

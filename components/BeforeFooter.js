@@ -55,7 +55,7 @@ export default function BeforeFooter() {
 
   return (
     <>
-      <div className="max-w-[84%] m-auto mt-20 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center mb-8 ">
+      <div className="max-w-[84%] m-auto my-52 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center  ">
         <m.div
           initial={{ opacity: 0, y: -30, x: -25 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
