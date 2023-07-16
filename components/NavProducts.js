@@ -70,7 +70,7 @@ const Navbar = () => {
                 <IoMdCart />
               </button>
               {cartCount > 0 && (
-                <div className="absolute top-0 right-0  rounded-full bg-[#c6a372] text-white text-xs w-4 h-4  flex justify-center items-center">
+                <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  flex justify-center items-center">
                   {cartCount}
                 </div>
               )}
