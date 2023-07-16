@@ -47,7 +47,7 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         cartItems: state.cartItems.map((item) =>
-          item.id === payload.id
+          item.id === payload.id && item.quantity > 1
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
@@ -59,15 +59,10 @@ export const productReducer = (state = initialState, { type, payload }) => {
         (item) => item.id === payload.id
       );
       const removedItemQuantity = removedItem ? removedItem.quantity : 0;
-      const remainingItemsCount = state.cartItems.length - 1;
-      const newCartCount = Math.max(
-        state.cartCount - removedItemQuantity,
-        remainingItemsCount
-      );
       return {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== payload.id),
-        cartCount: newCartCount,
+        cartCount: state.cartCount - removedItemQuantity,
       };
 
     case ActionTypes.TO_EMPTY_CART:
@@ -80,3 +75,4 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
+

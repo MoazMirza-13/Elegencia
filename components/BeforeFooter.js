@@ -1,39 +1,58 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import before_footerImg from "../public/before-footer/Group 31.png";
 import btn from "../app/modules/btn.module.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { useState, useEffect } from "react";
 import { motion as m } from "framer-motion";
-export default function BeforeFooter() {
-  const [showAlert, setShowAlert] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
+import { toast } from "react-toastify";
+import ClipLoader from "react-spinners/ClipLoader";
 
-  const validationSchema = Yup.object({
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
+// Define the validation schema
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("*Email is required"),
+});
+
+export default function BeforeFooter() {
+  //state to disable form submission
+  const [isToastVisible, setIsToastVisible] = useState(false);
+  //state to handle loading
+  const [loading, setLoading] = useState(false);
+
+  // Instantiate form hook
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    trigger,
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+    mode: "onBlur", // Trigger validation on blur event
   });
-  const handleEmail = (values) => {
-    if (validationSchema.isValidSync(values)) {
-      setShowAlert(true);
-      setShowMessage(true);
-      values.email = "";
-      // console.log(values);
-    }
+
+  // Success handler for email subscription
+  const handleEmail = () => {
+    setLoading(true);
+    setIsToastVisible(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      toast.success("Subscribed to Elegencia!", {
+        position: "top-right",
+        autoClose: 2000,
+        onClose: () => setIsToastVisible(false),
+      });
+    }, 1500);
   };
 
-  useEffect(() => {
-    let timer;
-    if (showMessage) {
-      timer = setTimeout(() => {
-        setShowMessage(false);
-      }, 2000);
-    }
+  // On form submit, handle email subscription
+  const onSubmit = (data) => handleEmail();
 
-    return () => clearTimeout(timer);
-  }, [showMessage]);
   return (
     <>
       <div className="max-w-[84%] m-auto mt-20 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center mb-8 ">
@@ -43,13 +62,6 @@ export default function BeforeFooter() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col gap-4 items-center text-center"
         >
-          {showAlert && showMessage && (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded text-center static">
-              <span className="block sm:inline">
-                You Are Now Subscribed To Elegencia
-              </span>
-            </div>
-          )}
           <h1 className="font-mont font-medium text-xl text-[#D4B78F]">
             Newsletter
           </h1>
@@ -62,35 +74,47 @@ export default function BeforeFooter() {
             offers. <br /> Subscribe now for special discounts and stay in the
             loop!
           </p>
-          <Formik
-            initialValues={{
-              email: "",
-            }}
-            validationSchema={validationSchema}
-            onSubmit={handleEmail}
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="relative flex flex-col"
           >
-            <Form className=" relative flex flex-col">
-              <Field
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                placeholder="Enter your Email Adress"
-                className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none   px-[265.558px] py-[1.338rem] lg:pr-[13.597rem]  md:pr-[7.597rem] pr-[4.597rem]  flex-grow lg:pl-[2.409rem] pl-[0.5rem] border border-[#e4cb901a]  border-gray-900 border-opacity-80  rounded-[3.346rem]"
+            <Controller
+              control={control}
+              name="email"
+              defaultValue=""
+              rules={{ required: true }}
+              render={({ field }) => (
+                <input
+                  {...field}
+                  onBlur={() => trigger("email")}
+                  type="email"
+                  autoComplete="email"
+                  placeholder="Enter your Email Address"
+                  className="font-mont font-medium text-sm bg-[#e4cb901a] text-[#C8C8C8] placeholder-[#C8C8C8] outline-none px-[265.558px] py-[1.338rem] lg:pr-[13.597rem]  md:pr-[7.597rem] pr-[4.597rem]  flex-grow lg:pl-[2.409rem] pl-[0.5rem] border border-[#e4cb901a]  border-gray-900 border-opacity-80  rounded-[3.346rem]"
+                />
+              )}
+            />
+            {errors.email && (
+              <span className="text-red-500 mt-2 ml-7 text-start">
+                {errors.email.message}
+              </span>
+            )}
+            {loading ? (
+              <ClipLoader
+                className="absolute top-[23px] right-[30px]"
+                color="#000000"
+                size={17}
               />
-              <ErrorMessage
-                name="email"
-                component="span"
-                className="text-red-500"
-              />
+            ) : (
               <button
+                disabled={isToastVisible}
                 type="submit"
                 className={`${btn["btn-5"]} md:w-[132.29px] w-[85.29px] font-mont font-medium text-sm text-white absolute top-[5px] right-[6px]`}
               >
                 Subscribe
               </button>
-            </Form>
-          </Formik>
+            )}
+          </form>
         </m.div>
         <m.div
           initial={{ opacity: 0, y: -30, x: 25 }}

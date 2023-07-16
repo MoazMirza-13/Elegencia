@@ -2,6 +2,9 @@
 import "./globals.css";
 
 import { Playfair_Display, Montserrat } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "@/components/customCss/custom-toastify.css";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -24,6 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={` ${playfair.className} ${mont.className}`}>
       <body>
+        <ToastContainer />
         <Provider store={store}>
           {children}
           <BeforeFooter />

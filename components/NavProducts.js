@@ -4,12 +4,11 @@ import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
 import { motion as m } from "framer-motion";
-
+import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const cartCount = useSelector((state) => state.allProducts.cartCount);
-
   const [showCart, setShowCart] = useState(false);
   const [navBg, setNavBg] = useState(0);
 
@@ -25,6 +24,7 @@ const Navbar = () => {
     const position = window.scrollY;
     setNavBg(position > 93);
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -35,9 +35,8 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={` fixed top-0 left-0 right-0 z-50 ${
-          navBg > 0 ? "nav-bg" : "bg-transparent"
-        }`}
+        className={` fixed top-0 left-0 right-0 z-50 ${navBg > 0 ? "nav-bg" : "bg-transparent"
+          }`}
       >
         <div className=" sm:max-w-[90%] max-w-[85%] lg:max-w-[85%] m-auto py-5 ">
           <div className=" flex items-center justify-between ">
@@ -71,7 +70,7 @@ const Navbar = () => {
                 <IoMdCart />
               </button>
               {cartCount > 0 && (
-                <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  flex justify-center items-center">
+                <div className="absolute top-0 right-0  rounded-full bg-[#c6a372] text-white text-xs w-4 h-4  flex justify-center items-center">
                   {cartCount}
                 </div>
               )}

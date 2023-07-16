@@ -10,15 +10,20 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import ClipLoader from "react-spinners/ClipLoader";
+
 import {
   increaseQuantity,
   decreaseQuantity,
   removeItem,
   emptyCart,
 } from "../app/redux/actions/productActions";
+
 export default function AddToCart({ isopen, onclose }) {
+  const router = useRouter();
   const cartItems = useSelector((state) => state.allProducts.cartItems);
   const dispatch = useDispatch();
 
@@ -59,13 +64,29 @@ export default function AddToCart({ isopen, onclose }) {
   const total = useMemo(() => calculateTotal(), [cartItems]);
 
   const [checkoutMode, setCheckoutMode] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleCheckout = () => {
-    setCheckoutMode(true);
-  };
+    if (cartItems.length === 0) {
+      toast.error("Nothing to Checkout!", {
+        position: "top-right",
+        autoClose: 1500,
+        onClose: () => {
+          onclose();
+          router.push("/products");
+        },
+      });
+    } else {
+    setLoading(true);
 
-  const [showMessage, setShowMessage] = useState(false);
-  const [isFormFilled, setIsFormFilled] = useState(false);
+    setTimeout(() => {
+      setLoading(false);
+      setCheckoutMode(true);
+    }, 1500);
+    }
+
+   
+  };
 
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First name is required"),
@@ -78,25 +99,25 @@ export default function AddToCart({ isopen, onclose }) {
     region: Yup.string().required("State / Province is required"),
     postalCode: Yup.string().required("ZIP / Postal code is required"),
   });
+
   const handleProceed = (values) => {
-    if (validationSchema.isValidSync(values)) {
-      handleEmptyCart();
-      setIsFormFilled(true);
-      setShowMessage(true);
-      // console.log(values);
-    }
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      toast.success("Order placed Successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+        onClose: () => {
+          onclose();
+          router.push("/products");
+        },
+      });
+      if (validationSchema.isValidSync(values)) {
+        handleEmptyCart();
+      }
+    }, 1500);
   };
-
-  useEffect(() => {
-    let timer;
-    if (showMessage) {
-      timer = setTimeout(() => {
-        setShowMessage(false);
-      }, 2000);
-    }
-
-    return () => clearTimeout(timer);
-  }, [showMessage]);
 
   return (
     <>
@@ -116,15 +137,6 @@ export default function AddToCart({ isopen, onclose }) {
       >
         <div className="flex bg-[#F5F5F5] flex-col justify-between lg:flex-row gap-12 lg:gap-0">
           <div className="min-w-[70%] ">
-            <div>
-              {isFormFilled && showMessage && (
-                <div className="bg-green-100 border border-green-400 text-green-700  px-4  py-3 rounded text-center absolute md:top-[2.25rem] top-[1.25rem] sm:left-[8rem] left-0  md:left-[12.938rem] xl:left-[23.938rem]">
-                  <span className="block sm:inline">
-                    Your Order Has Been Placed!
-                  </span>
-                </div>
-              )}
-            </div>
             <div className="max-w-[85%] m-auto py-8">
               <button onClick={onclose}>
                 <MdCancel className="text-[#C6A372] text-4xl" />
@@ -445,9 +457,24 @@ export default function AddToCart({ isopen, onclose }) {
                         <div className="flex justify-center md:w-[215px] w-[156px]">
                           <button
                             type="submit"
-                            className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] hover:bg-[#A37B44] shadow-md rounded-lg text-white text-center "
+                            className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] hover:bg-[#A37B44] shadow-md rounded-lg text-white text-center"
                           >
-                            Payment to Proceed
+                            {loading ? (
+                              <span>
+                                Proceeding...
+                                <span />
+                                <ClipLoader
+                                  className="relative top-[7%] left-[22px]"
+                                  color="#000000"
+                                  size={15}
+                                />
+                              </span>
+                            ) : (
+                              <span>
+                                Payment to Proceed
+                                <span />
+                              </span>
+                            )}
                           </button>
                         </div>
                       </Form>
@@ -520,12 +547,32 @@ export default function AddToCart({ isopen, onclose }) {
               </div>
             </div>
             <div className="flex flex-col gap-4 items-center">
-              <button
-                onClick={handleCheckout}
-                className="bg-[#A37B44] hover:bg-[#ab8144] rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] h-[2.375rem] text-[#FFFFFF] font-medium font-mont text-sm"
-              >
-                Checkout
-              </button>
+              {checkoutMode ? (
+                <div className="rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] text-[#FFFFFF] font-medium font-mont text-sm"></div>
+              ) : (
+                <button
+                  onClick={handleCheckout}
+                  className="bg-[#A37B44] hover:bg-[#ab8144] rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] h-[2.375rem] text-[#FFFFFF] font-medium font-mont text-sm"
+                >
+                  {loading ? (
+                    <span>
+                      Checking out...
+                      <span />
+                      <ClipLoader
+                        className="relative top-[7%] left-[22px]"
+                        color="#000000"
+                        size={15}
+                      />
+                    </span>
+                  ) : (
+                    <span>
+                      Checkout
+                      <span />
+                    </span>
+                  )}
+                </button>
+              )}
+
               <Link href="./products">
                 <button className=" font-medium font-mont text-sm">
                   Continue Shopping
