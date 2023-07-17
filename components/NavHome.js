@@ -64,11 +64,15 @@ const Navbar = () => {
           <div className=" flex items-center justify-between ">
             <div className=" flex items-center md:hidden">
               <m.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: "-100vw" }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0 }}
-                whileHover={{ scale: 1.4 }}
-                whileTap={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: 3.2,
+                  type: "spring",
+                  stiffness: 45,
+                }}
                 onClick={toggleMenu}
                 className="cursor-pointer sm:hidden"
               >
@@ -142,16 +146,17 @@ const Navbar = () => {
                   type: "spring",
                   stiffness: 45,
                 }}
-                whileHover={{ scale: 1.4 }}
-                whileTap={{ scale: 1 }}
                 className="flex md:gap-8 gap-6  relative"
               >
-                <button
+                <m.button
+                  whileHover={{ scale: 1.4 }}
+                  whileTap={{ scale: 1 }}
+                  transition={{ duration: 0.3 }}
                   onClick={handleCart}
                   className="text-4xl hidden sm:block"
                 >
                   <IoMdCart />
-                </button>
+                </m.button>
                 {cartCount > 0 && (
                   <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  sm:flex  hidden justify-center items-center">
                     {cartCount}
@@ -166,17 +171,21 @@ const Navbar = () => {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                delay: 3.4,
+                delay: 3.7,
                 type: "spring",
                 stiffness: 45,
               }}
-              whileHover={{ scale: 1.4 }}
-              whileTap={{ scale: 1 }}
               className="flex md:gap-8 gap-6 sm:hidden relative"
             >
-              <button onClick={handleCart} className="text-3xl">
+              <m.button
+                whileHover={{ scale: 1.4 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+                onClick={handleCart}
+                className="text-3xl"
+              >
                 <IoMdCart />
-              </button>
+              </m.button>
               {cartCount > 0 && (
                 <div className="absolute top-0 right-0 sm:hidden flex rounded-full bg-red-500 text-white text-xs w-4 h-4   justify-center items-center">
                   {cartCount}

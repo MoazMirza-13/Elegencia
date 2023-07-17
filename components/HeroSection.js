@@ -15,7 +15,7 @@ export default function Herosection() {
       >
         <div className="lg:pt-[13rem] md:pt-[9rem] pt-28  h-screen max-w-[84%] m-auto flex flex-col lg::gap-8 md:gap-[1.3rem] gap-12">
           <m.h1
-            initial={{ x: "-100vh", opacity: 0 }}
+            initial={{ x: "-100%", opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.9 }}
