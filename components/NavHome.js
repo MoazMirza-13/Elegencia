@@ -81,9 +81,15 @@ const Navbar = () => {
             </div>
             <div className="flex-1 flex sm:justify-between sm:items-stretch justify-center ">
               <m.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: "-100vw" }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: 2.8,
+                  type: "spring",
+                  stiffness: 45,
+                }}
                 className="flex-shrink-0 flex items-center"
               >
                 <Link
@@ -94,9 +100,14 @@ const Navbar = () => {
                 </Link>
               </m.div>
               <m.div
-                initial={{ opacity: 0, y: -25 }}
+                initial={{ opacity: 0, y: "-100vw" }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  delay: 2.3,
+                  type: "spring",
+                }}
                 className="flex"
               >
                 <ul className="sm:flex text-sm lg:text-base xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
@@ -122,9 +133,15 @@ const Navbar = () => {
               </m.div>
 
               <m.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: "100vw" }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: 3.4,
+                  type: "spring",
+                  stiffness: 45,
+                }}
                 whileHover={{ scale: 1.4 }}
                 whileTap={{ scale: 1 }}
                 className="flex md:gap-8 gap-6  relative"
@@ -144,9 +161,15 @@ const Navbar = () => {
             </div>
 
             <m.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: "100vw" }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 3.4,
+                type: "spring",
+                stiffness: 45,
+              }}
               whileHover={{ scale: 1.4 }}
               whileTap={{ scale: 1 }}
               className="flex md:gap-8 gap-6 sm:hidden relative"
