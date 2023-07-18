@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import before_footerImg from "../public/before-footer/Group 31.png";
 import btn from "../app/modules/btn.module.css";
@@ -25,9 +25,9 @@ export default function BeforeFooter() {
 
   // Instantiate form hook
   const {
-    register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
     trigger,
   } = useForm({
@@ -47,6 +47,7 @@ export default function BeforeFooter() {
         autoClose: 2000,
         onClose: () => setIsToastVisible(false),
       });
+      reset();
     }, 1500);
   };
 
