@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const position = window.scrollY;
-    setNavBg(position > 93);
+    setNavBg(position > 50);
   };
 
   useEffect(() => {
@@ -35,8 +35,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={` fixed top-0 left-0 right-0 z-50 ${navBg > 0 ? "nav-bg" : "bg-transparent"
-          }`}
+        className={` fixed top-0 left-0 right-0 z-50 ${
+          navBg > 0 ? "nav-bg" : "bg-transparent"
+        }`}
       >
         <div className=" sm:max-w-[90%] max-w-[85%] lg:max-w-[85%] m-auto py-5 ">
           <div className=" flex items-center justify-between ">
