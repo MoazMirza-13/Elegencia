@@ -29,10 +29,15 @@ export default function ExploreCategory() {
             initial={{ opacity: 1, width: "0.875rem" }}
             whileInView={{ opacity: 1, width: "38.875rem" }}
             viewport={{ once: true }}
-            transition={{ duration: 3, delay: 0.3 }}
+            transition={{ duration: 3, delay: 0.5 }}
+            className="lg:block hidden"
           >
             <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
           </m.div>
+
+          <div className="lg:hidden">
+            <hr className="w-[5.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
+          </div>
         </div>
         <div className="flex lg:gap-8 gap-2 mt-8">
           <div className="flex flex-col lg:gap-8 gap-4">
