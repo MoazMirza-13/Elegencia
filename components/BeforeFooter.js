@@ -59,7 +59,8 @@ export default function BeforeFooter() {
         <m.div
           initial={{ opacity: 0, y: -30, x: -25 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 1 }}
           className="flex flex-col gap-4 items-center text-center"
         >
           <h1 className="font-mont font-medium text-xl text-[#D4B78F]">
@@ -119,7 +120,8 @@ export default function BeforeFooter() {
         <m.div
           initial={{ opacity: 0, y: -30, x: 25 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 1 }}
         >
           <Image priority src={before_footerImg} alt="img" />
         </m.div>

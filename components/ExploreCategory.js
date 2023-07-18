@@ -17,9 +17,10 @@ export default function ExploreCategory() {
       <div className="md:max-w-[84%] max-w-[79%] m-auto mt-32">
         <div className="flex flex-row-reverse items-center gap-4">
           <m.h1
-            initial={{ opacity: 1, x: 30 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="font-playfair  lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]"
           >
             Explore By Category
@@ -27,7 +28,8 @@ export default function ExploreCategory() {
           <m.div
             initial={{ opacity: 1, width: "0.875rem" }}
             whileInView={{ opacity: 1, width: "38.875rem" }}
-            transition={{ duration: 3, delay: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, delay: 0.3 }}
           >
             <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
           </m.div>
@@ -131,12 +133,14 @@ export default function ExploreCategory() {
           </div>
         </div>
         <m.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: "-100%" }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.2,
+            delay: 0.8,
             type: "spring",
-            stiffness: 25,
+            stiffness: 50,
           }}
           className="flex justify-center mt-6 lg:mt-10"
         >

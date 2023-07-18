@@ -18,9 +18,10 @@ export default function ExploreOther() {
         <div className="md:max-w-[84%] max-w-[79%] m-auto mt-10">
           <div className="flex items-center sm:gap-4 gap-2">
             <m.h1
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] "
             >
               Best Selling Products
@@ -28,7 +29,8 @@ export default function ExploreOther() {
             <m.div
               initial={{ opacity: 1, width: "0.875rem" }}
               whileInView={{ opacity: 1, width: "38.875rem" }}
-              transition={{ duration: 3 }}
+              viewport={{ once: true }}
+              transition={{ duration: 3, delay: 0.5 }}
             >
               <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
             </m.div>
@@ -37,7 +39,7 @@ export default function ExploreOther() {
             <m.button
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 1 }}
-              transition={{ duration: 0.4, delay: 0 }}
+              transition={{ duration: 0.2, delay: 0 }}
               onClick={() => swiper2.slidePrev()}
             >
               <svg
@@ -73,7 +75,7 @@ export default function ExploreOther() {
             <m.button
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 1 }}
-              transition={{ duration: 0.4, delay: 0 }}
+              transition={{ duration: 0.2, delay: 0 }}
               onClick={() => swiper2.slideNext()}
             >
               <svg
@@ -133,12 +135,14 @@ export default function ExploreOther() {
             ))}
           </Swiper>
           <m.div
-            initial={{ opacity: 0, x: -140 }}
+            initial={{ opacity: 0, x: "-100%" }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{
-              duration: 0.6,
+              duration: 0.2,
+              delay: 0.7,
               type: "spring",
-              stiffness: 140,
+              stiffness: 50,
             }}
             className="flex justify-center lg:mt-10"
           >
@@ -147,7 +151,7 @@ export default function ExploreOther() {
               className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
             >
               Explore All Products
-              <svg 
+              <svg
                 width="25"
                 height="25"
                 viewBox="0 0 25 25"
