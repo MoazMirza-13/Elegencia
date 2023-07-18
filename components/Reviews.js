@@ -47,6 +47,7 @@ export default function Reviews() {
         <m.h1
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
           className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]"
         >
@@ -126,7 +127,7 @@ export default function Reviews() {
           },
           content: {
             maxWidth: "50%",
-            maxHeight: "43%",
+            maxHeight: "41.2%",
             margin: "auto",
             zIndex: 1000,
             padding: 0,

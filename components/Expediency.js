@@ -2,7 +2,7 @@ import { motion as m } from "framer-motion";
 
 export default function Expediency() {
   return (
-    <div className="bg-[#D4B78F] flex flex-col items-center my-48 gap-12 p-12">
+    <div className="bg-[#D4B78F] flex flex-col items-center lg:my-48 my-32 gap-12 p-12">
       <m.h1
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -678,7 +678,7 @@ export default function Testimonials() {
         <div className="flex justify-center mt-6 lg:mt-10">
           <Link href="./Reviews">
             <m.button
-              initial={{ opacity: 0, x: "100%" }}
+              initial={{ opacity: 0, x: "-100%" }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{

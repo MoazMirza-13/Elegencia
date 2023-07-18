@@ -77,15 +77,13 @@ export default function AddToCart({ isopen, onclose }) {
         },
       });
     } else {
-    setLoading(true);
+      setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setCheckoutMode(true);
-    }, 1500);
+      setTimeout(() => {
+        setLoading(false);
+        setCheckoutMode(true);
+      }, 1500);
     }
-
-   
   };
 
   const validationSchema = Yup.object({
@@ -188,6 +186,7 @@ export default function AddToCart({ isopen, onclose }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.4,
+                  delay: 0.4,
                   type: "spring",
                   stiffness: 500,
                 }}
@@ -526,7 +525,7 @@ export default function AddToCart({ isopen, onclose }) {
               </>
             )}
           </div>
-          <div className="bg-[#D4B78F] p-8 lg:pt-20 pt-8 lg:pb-[10.4rem] text-white flex flex-col gap-6 lg:gap-10">
+          <div className="bg-[#D4B78F] p-8 lg:pt-[6.8rem] pt-8 lg:pb-[10.4rem] text-white flex flex-col gap-6 lg:gap-10">
             <h1 className=" font-mont font-semibold text-xl">SUMMARY</h1>
             <hr className=" lg:w-[12i2.875rem] h-[0.188rem] rounded-full bg-[#A37B44]" />
             <div className="flex flex-col gap-8">

@@ -56,12 +56,12 @@ export default function BeforeFooter() {
 
   return (
     <>
-      <div className="max-w-[84%] m-auto my-52 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center  ">
+      <div className="max-w-[84%] m-auto lg:my-52 my-36 flex flex-col xl:flex-row gap-8 md:gap-8 lg:gap-4 justify-between items-center  ">
         <m.div
           initial={{ opacity: 0, y: -30, x: -25 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.5, delay: 1.6 }}
           className="flex flex-col gap-4 items-center text-center"
         >
           <h1 className="font-mont font-medium text-xl text-[#D4B78F]">
@@ -122,7 +122,7 @@ export default function BeforeFooter() {
           initial={{ opacity: 0, y: -30, x: 25 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.5, delay: 1.6 }}
         >
           <Image priority src={before_footerImg} alt="img" />
         </m.div>
