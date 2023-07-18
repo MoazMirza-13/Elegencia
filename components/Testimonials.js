@@ -44,7 +44,7 @@ export default function Testimonials() {
           </m.div>
 
           <div className="lg:hidden">
-            <hr className="w-[5.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
+            <hr className="w-[5.875rem] md:w-[12.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
           </div>
         </div>
         <Swiper

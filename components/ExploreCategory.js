@@ -36,10 +36,10 @@ export default function ExploreCategory() {
           </m.div>
 
           <div className="lg:hidden">
-            <hr className="w-[5.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
+            <hr className="w-[5.875rem] md:w-[12.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
           </div>
         </div>
-        <div className="flex lg:gap-8 gap-2 mt-8">
+        <div className="flex md:flex-row flex-col lg:gap-8 gap-2 mt-8">
           <div className="flex flex-col lg:gap-8 gap-4">
             <Link href={`./products?category=Decent Table`}>
               <div className="relative group">

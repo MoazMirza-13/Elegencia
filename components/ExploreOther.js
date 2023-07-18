@@ -37,7 +37,7 @@ export default function ExploreOther() {
             </m.div>
 
             <div className="lg:hidden">
-              <hr className="w-[5.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
+              <hr className="w-[5.875rem] md:w-[12.875rem] h-[0.388rem] bg-[#D4B78F] rounded-full" />
             </div>
           </div>
           <div className="flex justify-end sm:gap-6 gap-2 mb-6">
@@ -145,7 +145,7 @@ export default function ExploreOther() {
             viewport={{ once: true }}
             transition={{
               duration: 0.2,
-              delay: 0.7,
+              delay: 1,
               type: "spring",
               stiffness: 50,
             }}
