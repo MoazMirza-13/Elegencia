@@ -122,7 +122,7 @@ export default function BeforeFooter() {
           initial={{ opacity: 0, y: -30, x: 25 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.6 }}
+          transition={{ duration: 0.5, delay: 1.7 }}
         >
           <Image priority src={before_footerImg} alt="img" />
         </m.div>

@@ -9,13 +9,12 @@ import Reviews from "@/components/Reviews";
 import ExploreOther from "@/components/ExploreOther";
 import { motion as m } from "framer-motion";
 import { useEffect } from "react";
-import productsData from "@/components/productsData";
+import { productsData } from "@/components/productsData";
 
 export default function page() {
   const pathname = usePathname();
   const productItem = pathname.replace("/products/", "");
   const product = productsData.find((item) => item.id === productItem);
-  //   console.log(product);
 
   useEffect(() => {
     const scrollToTop = () => {

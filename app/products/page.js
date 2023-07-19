@@ -2,10 +2,10 @@
 import { Helmet } from "react-helmet";
 import Category from "@/components/Category";
 import Nav from "@/components/NavProducts";
-import Products from "@/components/Products";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion as m } from "framer-motion";
+import ProductCard from "@/components/ProductCard";
 
 export default function page() {
   const searchParams = useSearchParams();
@@ -42,7 +42,7 @@ export default function page() {
       </m.h2>
       <div className="flex xl:max-w-[85%] md:max-w-[93%] max-w-[83%] m-auto mt-12 xl:gap-8 lg:gap-2 sm:gap-4 gap-2">
         <Category setActiveCategoryProp={setActiveCategory} />
-        <Products activeCategory={activeCategory} />
+        <ProductCard activeCategory={activeCategory} />
       </div>
     </>
   );
