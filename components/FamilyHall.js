@@ -6,7 +6,7 @@ export default function FamilyHall() {
   return (
     <>
       <div className="flex gap-4 lg:gap-2 xl:gap-4 flex-wrap  justify-center">
-        <Link href="./FamilyHall">
+        <Link href="./products/family-sofa">
           <m.div
             initial={{ opacity: 0, x: -23, y: -50 }}
             animate={{ opacity: 1, x: 0, y: 0 }}

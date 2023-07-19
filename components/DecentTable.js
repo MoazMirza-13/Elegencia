@@ -6,7 +6,7 @@ export default function DecentTable() {
   return (
     <>
       <div className="flex gap-4 lg:gap-2 xl:gap-4 flex-wrap  justify-center">
-        <Link href="./DecentTable">
+        <Link href="./products/decent-table">
           <m.div
             initial={{ opacity: 0, x: -23, y: -50 }}
             animate={{ opacity: 1, x: 0, y: 0 }}

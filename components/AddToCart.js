@@ -162,7 +162,13 @@ export default function AddToCart({ isopen, onclose }) {
                 <m.div
                   initial={{ opacity: 0, x: -60 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                    type: "spring",
+                    stiffness: 200,
+                  }}
                   className="flex xl:gap-[17rem] lg:gap-[14rem] max-w-[70%] m-auto"
                 >
                   <h1 className="font-mont font-semibold text-center lg:text-start">

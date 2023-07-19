@@ -1,15 +1,22 @@
 "use client";
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/actions/productActions";
+import { addToCart } from "../../redux/actions/productActions";
 import Navbar from "@/components/NavProducts";
 import Image from "next/image";
-import productImg from "../../public/product-pages/image 41.png";
+import { usePathname } from "next/navigation";
 import Reviews from "@/components/Reviews";
 import ExploreOther from "@/components/ExploreOther";
 import { motion as m } from "framer-motion";
 import { useEffect } from "react";
+import productsData from "@/components/productsData";
+
 export default function page() {
+  const pathname = usePathname();
+  const productItem = pathname.replace("/products/", "");
+  const product = productsData.find((item) => item.id === productItem);
+  //   console.log(product);
+
   useEffect(() => {
     const scrollToTop = () => {
       window.scrollTo(0, 100);
@@ -17,41 +24,47 @@ export default function page() {
 
     scrollToTop();
   }, []);
+
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
     const productToAdd = {
-      id: "simplebed",
-      name: "Simple Bed",
-      price: 700,
+      id: product.id,
+      name: product.name,
+      price: product.price,
       quantity: 1,
-      img: productImg,
+      img: product.img,
     };
     dispatch(addToCart(productToAdd));
   };
+
   return (
     <>
       <Helmet>
-        <title>Elegencia : Simple Bed</title>
+        <title>Elegencia : {product.name}</title>
       </Helmet>
       <Navbar />
       <div className="flex flex-col lg:flex-row  items-center gap-12  md:gap-24 lg:gap-20 xl:gap-[12rem] max-w-[80%] m-auto mt-[10rem] md:mt-[12rem]">
-        <Image priority src={productImg} alt="img" />
+        <Image priority src={product.img} alt="img" />
 
         <m.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, type: "spring", stiffness: 300 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 1,
+            delay: 0.4,
+            type: "spring",
+            stiffness: 300,
+          }}
           className="flex flex-col gap-8 md:gap-4 xl:gap-8"
         >
-          <h1 className="font-playfair font-semibold text-4xl">Simple Bed</h1>
-          <p className="font-mont font-semibold text-base">$700</p>
+          <h1 className="font-playfair font-semibold text-4xl">
+            {product.name}
+          </h1>
+          <p className="font-mont font-semibold text-base">${product.price}</p>
           <p className="text-[#888888] font-mont md:text-sm xl:text-base">
-            Experience the perfect blend of beauty and functionality with the
-            Enchant Side Table. Crafted with exquisite detail, it adds a touch
-            of sophistication to any space while offering convenient storage.
-            Elevate your home decor with the Enchant Side Table's timeless
-            goodness.
+            {product.description}
           </p>
           <div className="flex justify-center  md:justify-start">
             <button
