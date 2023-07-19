@@ -1,3 +1,4 @@
+// productitem
 import productImgSsofa from "../public/product-pages/Rectangle 101.png";
 import productImgBed from "../public/product-pages/image 41.png";
 import productImgFsofa from "../public/product-pages/Rectangle 117.png";

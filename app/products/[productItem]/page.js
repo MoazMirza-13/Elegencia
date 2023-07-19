@@ -10,11 +10,18 @@ import ExploreOther from "@/components/ExploreOther";
 import { motion as m } from "framer-motion";
 import { useEffect } from "react";
 import { productsData } from "@/components/productsData";
+import { useRouter } from "next/navigation";
 
 export default function page() {
+  const router = useRouter();
+
   const pathname = usePathname();
   const productItem = pathname.replace("/products/", "");
   const product = productsData.find((item) => item.id === productItem);
+
+  if (!product) {
+    return router.push("/Error");
+  }
 
   useEffect(() => {
     const scrollToTop = () => {
