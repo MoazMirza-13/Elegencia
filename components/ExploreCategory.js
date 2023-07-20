@@ -16,15 +16,15 @@ export default function ExploreCategory() {
     <Element name="categories">
       <div className="md:max-w-[84%] max-w-[79%] m-auto lg:mt-44 mt-24">
         <div className="flex flex-row-reverse items-center gap-4">
-          <m.h1
+          <h1
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
             className="font-playfair  lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]"
           >
             Explore By Category
-          </m.h1>
+          </h1>
           <m.div
             initial={{ opacity: 1, width: "0.875rem" }}
             whileInView={{ opacity: 1, width: "38.875rem" }}
@@ -151,7 +151,7 @@ export default function ExploreCategory() {
         >
           <Link href="./products">
             <button
-              className={`${btn["btn-4"]} w-[260.71px] md:w-[291.71px;] font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
+              className={`${btn["btn-4"]} w-[260.71px] md:w-[291.71px;] hover:bg-[#a37b44d6] font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
             >
               Explore All Categories
               <svg

@@ -18,16 +18,17 @@ export default function ExploreOther() {
         <div className="md:max-w-[84%] max-w-[79%] m-auto mt-10">
           <div className="flex items-center sm:gap-4 gap-2">
             <h1
-              // initial={{ opacity: 0, x: -30 }}
-              // whileInView={{ opacity: 1, x: 0 }}
-              // viewport={{ once: true }}
-              // transition={{ duration: 0.6, delay: 0.5 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.5 }}
               className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem] "
             >
               Best Selling Products
             </h1>
+
             <m.div
-              initial={{ opacity: 1, width: "0.875rem" }}
+              initial={{ opacity: 0.7, width: "0.875rem" }}
               whileInView={{ opacity: 1, width: "38.875rem" }}
               viewport={{ once: true }}
               transition={{ duration: 3, delay: 0.5 }}

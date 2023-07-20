@@ -10,15 +10,16 @@ export default function ProductCard({ activeCategory }) {
 
   return (
     <>
-      <div className="flex gap-4 lg:gap-2 xl:gap-4 flex-wrap justify-center">
+      <m.div
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="flex gap-4 lg:gap-2 xl:gap-4 flex-wrap justify-center"
+      >
         {Array.from({ length: 6 }).map((_, index) => (
           <Link key={index} href={`./products/${filteredProducts[0].id}`}>
-            <m.div
-              initial={{ opacity: 0, x: -23, y: -50 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg dark:border-gray-700  hover:shadow-lg text-center sm:text-start"
-            >
+            <m.div className="xl:max-w-[19rem] lg:max-w-[15rem] sm:max-w-[10rem] max-w-[11rem] bg-white border border-gray-200 rounded-lg shadow nav-bg dark:border-gray-700  hover:shadow-lg text-center sm:text-start">
               <Image
                 priority
                 className="rounded-t-lg"
@@ -62,7 +63,7 @@ export default function ProductCard({ activeCategory }) {
             </m.div>
           </Link>
         ))}
-      </div>
+      </m.div>
     </>
   );
 }

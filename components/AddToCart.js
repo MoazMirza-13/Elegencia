@@ -134,7 +134,7 @@ export default function AddToCart({ isopen, onclose }) {
         }}
       >
         <div className="flex bg-[#F5F5F5] flex-col justify-between lg:flex-row gap-12 lg:gap-0">
-          <div className="min-w-[70%] ">
+          <div className="min-w-[70%] xl:min-w-[70%]i lg:min-w-[69%] ">
             <div className="max-w-[85%] m-auto py-8">
               <button onClick={onclose}>
                 <MdCancel className="text-[#C6A372] text-4xl" />
@@ -144,7 +144,7 @@ export default function AddToCart({ isopen, onclose }) {
               {checkoutMode && cartItems.length !== 0 && (
                 <div className=" min-w-[70%] m-auto">
                   <m.h1
-                    initial={{ opacity: 0, x: 60 }}
+                    initial={{ opacity: 0, x: "15%" }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
                       duration: 0.4,
@@ -169,12 +169,12 @@ export default function AddToCart({ isopen, onclose }) {
                     type: "spring",
                     stiffness: 200,
                   }}
-                  className="flex xl:gap-[17rem] lg:gap-[14rem] max-w-[70%] m-auto"
+                  className="flex xl:gap-[20rem] lg:gap-[13rem] max-w-[70%] m-auto"
                 >
                   <h1 className="font-mont font-semibold text-center lg:text-start">
                     Products
                   </h1>
-                  <div className="lg:flex xl:gap-[8rem] gap-12 hidden ">
+                  <div className="lg:flex xl:gap-[8rem] gap-16 hidden ">
                     <h1 className="font-mont font-semibold">QUANTITY</h1>
                     <h1 className="font-mont font-semibold">TOTAL</h1>
                   </div>
@@ -203,7 +203,7 @@ export default function AddToCart({ isopen, onclose }) {
             ) : (
               <>
                 {checkoutMode ? (
-                  <div className="border-b border-gray-900/10 max-w-[75%] m-auto p-4">
+                  <div className="border-b border-gray-900/10 max-w-[75%] m-auto p-4 lg:pb-24">
                     <h2 className="text-base font-semibold leading-7 text-gray-900 text-center">
                       Your Information
                     </h2>
@@ -465,14 +465,16 @@ export default function AddToCart({ isopen, onclose }) {
                             className="w-[37rem] h-[3rem] mt-4 bg-[#D4B78F] hover:bg-[#A37B44] shadow-md rounded-lg text-white text-center"
                           >
                             {loading ? (
-                              <span>
+                              <span className="flex justify-center">
                                 Proceeding...
                                 <span />
-                                <ClipLoader
-                                  className="relative top-[7%] left-[22px]"
-                                  color="#000000"
-                                  size={15}
-                                />
+                                <span className="hidden md:block">
+                                  <ClipLoader
+                                    className="relative top-[7%] left-[22px] "
+                                    color="#000000"
+                                    size={15}
+                                  />
+                                </span>
                               </span>
                             ) : (
                               <span>
@@ -553,7 +555,7 @@ export default function AddToCart({ isopen, onclose }) {
             </div>
             <div className="flex flex-col gap-4 items-center">
               {checkoutMode ? (
-                <div className="rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] text-[#FFFFFF] font-medium font-mont text-sm"></div>
+                <div className="rounded-md lg:w-[13.875rem] xl:w-[18.875rem] w-[12.875rem] text-[#FFFFFF] font-medium font-mont h-[2.375rem] text-sm"></div>
               ) : (
                 <button
                   onClick={handleCheckout}

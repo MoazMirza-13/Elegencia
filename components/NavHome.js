@@ -4,7 +4,6 @@ import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
 import { Slant as Hamburger } from "hamburger-react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link as ScrollLink } from "react-scroll";
 import { motion as m } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -70,7 +69,7 @@ const Navbar = () => {
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
-                  delay: 3.2,
+                  delay: 1.6,
                   type: "spring",
                   stiffness: 45,
                 }}
@@ -86,7 +85,7 @@ const Navbar = () => {
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
-                  delay: 2.8,
+                  delay: 1.6,
                   type: "spring",
                   stiffness: 45,
                 }}
@@ -105,7 +104,7 @@ const Navbar = () => {
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.8,
-                  delay: 2.3,
+                  delay: 1.2,
                   type: "spring",
                 }}
                 className="flex"
@@ -138,7 +137,7 @@ const Navbar = () => {
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
-                  delay: 3.4,
+                  delay: 1.6,
                   type: "spring",
                   stiffness: 45,
                 }}
@@ -170,7 +169,7 @@ const Navbar = () => {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                delay: 3.7,
+                delay: 1.6,
                 type: "spring",
                 stiffness: 45,
               }}

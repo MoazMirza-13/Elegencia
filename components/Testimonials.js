@@ -24,15 +24,15 @@ export default function Testimonials() {
     <Element name="testimonials">
       <div className="max-w-[85%] md:max-w-[90%]  m-auto mt-10">
         <div className="flex items-center max-w-[84%] m-auto gap-4">
-          <m.h1
+          <h1
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
             className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]"
           >
             Testimonials
-          </m.h1>
+          </h1>
           <m.div
             initial={{ opacity: 1, width: "0.875rem" }}
             whileInView={{ opacity: 1, width: "38.875rem" }}
@@ -692,7 +692,7 @@ export default function Testimonials() {
                 type: "spring",
                 stiffness: 50,
               }}
-              className={`${btn["btn-3"]} font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
+              className={`${btn["btn-3"]} font-semibold text-xl hover:bg-[#a37b44d6] text-white flex items-center justify-center  gap-[0.2rem]`}
             >
               See All Reviews
               <svg

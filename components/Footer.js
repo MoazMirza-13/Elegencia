@@ -105,7 +105,12 @@ export default function Footer() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+              transition={{
+                duration: 0.4,
+                delay: 1.6,
+                type: "spring",
+                stiffness: 120,
+              }}
               className="flex flex-col gap-2 md:gap-4 sm:hidden"
             >
               <h1 className="font-mont font-bold text-sm">Shop</h1>
@@ -119,7 +124,12 @@ export default function Footer() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+              transition={{
+                duration: 0.4,
+                delay: 1.6,
+                type: "spring",
+                stiffness: 120,
+              }}
               className="flex flex-col gap-2 md:gap-4 sm:hidden"
             >
               <h1 className="font-mont font-bold text-sm">Legal Stuff</h1>
