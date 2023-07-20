@@ -25,7 +25,7 @@ export default function page() {
 
   useEffect(() => {
     const scrollToTop = () => {
-      window.scrollTo(0, 100);
+      window.scrollTo(0, 90);
     };
 
     scrollToTop();

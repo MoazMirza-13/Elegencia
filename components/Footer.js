@@ -30,7 +30,7 @@ export default function Footer() {
                   duration: 0.4,
                   type: "spring",
                   stiffness: 120,
-                  delay: 1.7,
+                  delay: 1.6,
                 }}
                 className="flex flex-col gap-2 md:gap-4"
               >
@@ -88,7 +88,7 @@ export default function Footer() {
                   duration: 0.4,
                   type: "spring",
                   stiffness: 120,
-                  delay: 1.7,
+                  delay: 1.6,
                 }}
                 className="flex-col gap-4 hidden sm:flex"
               >
@@ -142,7 +142,7 @@ export default function Footer() {
                 duration: 0.4,
                 type: "spring",
                 stiffness: 120,
-                delay: 2.1,
+                delay: 1.6,
               }}
               className="font-mont font-medium text-center text-xs text-[#646464]"
             >

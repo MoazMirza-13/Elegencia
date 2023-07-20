@@ -48,7 +48,12 @@ export default function Reviews() {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+          transition={{
+            duration: 0.4,
+            delay: 0.3,
+            type: "spring",
+            stiffness: 300,
+          }}
           className="font-playfair lg:font-semibold md:text-5xl text-[1.5rem] md:leading-[4.563rem] leading-[1.5rem] sm:leading-[2rem]"
         >
           Reviews

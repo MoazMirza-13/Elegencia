@@ -110,7 +110,7 @@ const Navbar = () => {
                 }}
                 className="flex"
               >
-                <ul className="sm:flex   xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
+                <ul className="sm:flex   xl:text-xl md:text-base text-sm font-mont hidden items-center gap-4 lg:gap-8">
                   {navLi.map(({ id, title, offset }) => (
                     <li
                       className={`tracking-wide cursor-pointer ${
