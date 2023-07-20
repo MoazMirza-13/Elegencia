@@ -153,7 +153,7 @@ export default function ExploreOther() {
           >
             <Link
               href="./products"
-              className={`${btn["btn-3"]} font-semibold text-xl text-white hover:bg-[#a37b44b5] flex items-center justify-center  gap-[0.2rem]`}
+              className={`${btn["btn-3"]} font-semibold text-xl text-white hover:bg-[#a37b44d6] flex items-center justify-center  gap-[0.2rem]`}
             >
               Explore All Products
               <svg

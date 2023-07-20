@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { Slant as Hamburger } from "hamburger-react";
 import { Link as ScrollLink } from "react-scroll";
 import { motion as m } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -57,7 +57,7 @@ const Navbar = () => {
     <>
       <nav
         className={` fixed top-0 left-0 right-0 z-50 ${
-          navBg > 0 || isOpen ? "nav-bg " : "bg-transparent "
+          navBg > 0 || isOpen ? "nav-bg " : "bg-transparent  "
         }`}
       >
         <div className=" sm:max-w-[90%] max-w-[85%] lg:max-w-[85%] m-auto py-5 ">
@@ -65,7 +65,7 @@ const Navbar = () => {
             <div className=" flex items-center md:hidden">
               <m.div
                 initial={{ opacity: 0, x: "-100vw" }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
@@ -73,14 +73,9 @@ const Navbar = () => {
                   type: "spring",
                   stiffness: 45,
                 }}
-                onClick={toggleMenu}
                 className="cursor-pointer sm:hidden"
               >
-                {isOpen ? (
-                  <HiX className="text-3xl" />
-                ) : (
-                  <HiMenuAlt3 className="text-3xl" />
-                )}
+                <Hamburger size={30} toggled={isOpen} toggle={setIsOpen} />
               </m.div>
             </div>
             <div className="flex-1 flex sm:justify-between sm:items-stretch justify-center ">
@@ -114,7 +109,7 @@ const Navbar = () => {
                 }}
                 className="flex"
               >
-                <ul className="sm:flex text-sm lg:text-base xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
+                <ul className="sm:flex   xl:text-xl  font-mont hidden items-center gap-4 lg:gap-8">
                   {navLi.map(({ id, title, offset }) => (
                     <li
                       className={`tracking-wide cursor-pointer ${
@@ -195,14 +190,24 @@ const Navbar = () => {
           </div>
         </div>
         {/* mobile */}
-        <div className={`${isOpen ? "block " : "hidden"} sm:hidden `}>
-          <div className="px-2 pt-10 pb-3 space-y-1 h-screen">
+        <m.div className={`${isOpen ? "block " : "hidden"} sm:hidden `}>
+          <m.div className="px-2 pt-10 pb-3 space-y-1 h-screen">
             <ul
-              className="flex  font-mont flex-col items-center gap-8"
+              className="flex  font-mont flex-col items-centeri pl-6  gap-8"
               onClick={toggleMenu}
             >
-              {navLiMobile.map(({ id, title, offset }) => (
-                <li className="tracking-wide text-2xl cursor-pointer" key={id}>
+              {navLiMobile.map(({ id, title, offset }, index) => (
+                <m.li
+                  initial={{ opacity: 0, x: "-100%" }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: index * 0.35,
+                    type: "spring",
+                  }}
+                  viewport={{ once: true }}
+                  key={id}
+                  className="tracking-wide text-2xl cursor-pointer"
+                >
                   <ScrollLink
                     onClick={toggleMenu}
                     to={id}
@@ -213,11 +218,11 @@ const Navbar = () => {
                   >
                     {title}
                   </ScrollLink>
-                </li>
+                </m.li>
               ))}
             </ul>
-          </div>
-        </div>
+          </m.div>
+        </m.div>
       </nav>
       {showCart && <AddToCart isopen={showCart} onclose={handleCloseCart} />}
     </>
