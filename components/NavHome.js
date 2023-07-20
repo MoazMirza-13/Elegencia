@@ -4,6 +4,7 @@ import AddToCart from "./AddToCart";
 import Link from "next/link";
 import { IoMdCart } from "react-icons/io";
 import { Slant as Hamburger } from "hamburger-react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link as ScrollLink } from "react-scroll";
 import { motion as m } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -65,7 +66,7 @@ const Navbar = () => {
             <div className=" flex items-center md:hidden">
               <m.div
                 initial={{ opacity: 0, x: "-100vw" }}
-                whileInView={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.5,
@@ -143,20 +144,23 @@ const Navbar = () => {
                 }}
                 className="flex md:gap-8 gap-6  relative"
               >
-                <m.button
+                <m.div
                   whileHover={{ scale: 1.4 }}
                   whileTap={{ scale: 1 }}
                   transition={{ duration: 0.3 }}
-                  onClick={handleCart}
-                  className="text-4xl hidden sm:block"
                 >
-                  <IoMdCart />
-                </m.button>
-                {cartCount > 0 && (
-                  <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  sm:flex  hidden justify-center items-center">
-                    {cartCount}
-                  </div>
-                )}
+                  <m.button
+                    onClick={handleCart}
+                    className="text-4xl hidden sm:block"
+                  >
+                    <IoMdCart />
+                  </m.button>
+                  {cartCount > 0 && (
+                    <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  sm:flex  hidden justify-center items-center">
+                      {cartCount}
+                    </div>
+                  )}
+                </m.div>
               </m.div>
             </div>
 
@@ -172,20 +176,20 @@ const Navbar = () => {
               }}
               className="flex md:gap-8 gap-6 sm:hidden relative"
             >
-              <m.button
+              <m.div
                 whileHover={{ scale: 1.4 }}
                 whileTap={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
-                onClick={handleCart}
-                className="text-3xl"
               >
-                <IoMdCart />
-              </m.button>
-              {cartCount > 0 && (
-                <div className="absolute top-0 right-0 sm:hidden flex rounded-full bg-red-500 text-white text-xs w-4 h-4   justify-center items-center">
-                  {cartCount}
-                </div>
-              )}
+                <m.button onClick={handleCart} className="text-3xl">
+                  <IoMdCart />
+                </m.button>
+                {cartCount > 0 && (
+                  <div className="absolute top-0 right-0 sm:hidden flex rounded-full bg-red-500 text-white text-xs w-4 h-4   justify-center items-center">
+                    {cartCount}
+                  </div>
+                )}
+              </m.div>
             </m.div>
           </div>
         </div>

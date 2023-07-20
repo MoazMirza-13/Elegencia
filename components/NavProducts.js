@@ -63,18 +63,22 @@ const Navbar = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0 }}
-              whileHover={{ scale: 1.4 }}
-              whileTap={{ scale: 1 }}
               className="flex md:gap-8 gap-6 relative"
             >
-              <button onClick={handleCart} className="text-4xl">
-                <IoMdCart />
-              </button>
-              {cartCount > 0 && (
-                <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  flex justify-center items-center">
-                  {cartCount}
-                </div>
-              )}
+              <m.div
+                whileHover={{ scale: 1.4 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <button onClick={handleCart} className="text-4xl">
+                  <IoMdCart />
+                </button>
+                {cartCount > 0 && (
+                  <div className="absolute top-0 right-0  rounded-full bg-red-500 text-white text-xs w-4 h-4  flex justify-center items-center">
+                    {cartCount}
+                  </div>
+                )}
+              </m.div>
             </m.div>
           </div>
         </div>
