@@ -106,10 +106,6 @@ export default function AddToCart({ isopen, onclose }) {
       toast.success("Order placed Successfully!", {
         position: "top-right",
         autoClose: 2000,
-        onClose: () => {
-          onclose();
-          router.push("/products");
-        },
       });
       if (validationSchema.isValidSync(values)) {
         handleEmptyCart();
