@@ -152,7 +152,7 @@ export default function Footer() {
                 duration: 0.4,
                 type: "spring",
                 stiffness: 120,
-                delay: 1.6,
+                delay: 1.8,
               }}
               className="font-mont font-medium text-center text-xs text-[#646464]"
             >
