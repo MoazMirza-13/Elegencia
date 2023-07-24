@@ -18,7 +18,7 @@ export default function Herosection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 1,
+            duration: 1.1,
             delay: 0.5,
             type: "spring",
           }}

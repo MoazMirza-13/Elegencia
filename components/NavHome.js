@@ -63,32 +63,16 @@ const Navbar = () => {
         <div className=" sm:max-w-[90%] max-w-[85%] lg:max-w-[85%] m-auto py-5 ">
           <div className=" flex items-center justify-between ">
             <div className=" flex items-center md:hidden">
-              <m.div
-                initial={{ opacity: 0, x: "-100vw" }}
-                animate={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1.6,
-                  type: "spring",
-                  stiffness: 45,
-                }}
+              <div
+            
                 className="cursor-pointer sm:hidden"
               >
                 <Hamburger size={30} toggled={isOpen} toggle={setIsOpen} />
-              </m.div>
+              </div>
             </div>
             <div className="flex-1 flex sm:justify-between sm:items-stretch justify-center ">
-              <m.div
-                initial={{ opacity: 0, x: "-100vw" }}
-                animate={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1.6,
-                  type: "spring",
-                  stiffness: 45,
-                }}
+              <div
+            
                 className="flex-shrink-0 flex items-center"
               >
                 <Link
@@ -97,16 +81,9 @@ const Navbar = () => {
                 >
                   ELEGENCIA
                 </Link>
-              </m.div>
-              <m.div
-                initial={{ opacity: 0, y: "-100vw" }}
-                animate={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.8,
-                  delay: 1.2,
-                  type: "spring",
-                }}
+              </div>
+              <div
+             
                 className="flex"
               >
                 <ul className="sm:flex   xl:text-xl md:text-base text-sm font-mont hidden items-center gap-4 lg:gap-8">
@@ -129,18 +106,10 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-              </m.div>
+              </div>
 
-              <m.div
-                initial={{ opacity: 0, x: "100vw" }}
-                animate={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1.6,
-                  type: "spring",
-                  stiffness: 45,
-                }}
+              <div
+              
                 className="flex md:gap-8 gap-6  relative"
               >
                 <m.div
@@ -160,19 +129,11 @@ const Navbar = () => {
                     </div>
                   )}
                 </m.div>
-              </m.div>
+              </div>
             </div>
 
-            <m.div
-              initial={{ opacity: 0, x: "100vw" }}
-              animate={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: 1.6,
-                type: "spring",
-                stiffness: 45,
-              }}
+            <div
+      
               className="flex md:gap-8 gap-6 sm:hidden relative"
             >
               <m.div
@@ -189,7 +150,7 @@ const Navbar = () => {
                   </div>
                 )}
               </m.div>
-            </m.div>
+            </div>
           </div>
         </div>
         {/* mobile */}
