@@ -682,16 +682,7 @@ export default function Testimonials() {
         </Swiper>
         <div className="flex justify-center mt-6 lg:mt-10">
           <Link href="./Reviews">
-            <m.button
-              initial={{ opacity: 0, x: "-100%" }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0,
-                delay: 0.7,
-                type: "spring",
-                stiffness: 50,
-              }}
+            <button
               className={`${btn["btn-3"]} font-semibold text-xl hover:bg-[#a37b44d6] text-white flex items-center justify-center  gap-[0.2rem]`}
             >
               See All Reviews
@@ -717,7 +708,7 @@ export default function Testimonials() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </m.button>
+            </button>
           </Link>
         </div>
       </div>

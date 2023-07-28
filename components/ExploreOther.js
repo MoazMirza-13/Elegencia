@@ -140,18 +140,7 @@ export default function ExploreOther() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <m.div
-            initial={{ opacity: 0, x: "-100%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.2,
-              delay: 1,
-              type: "spring",
-              stiffness: 50,
-            }}
-            className="flex justify-center lg:mt-10"
-          >
+          <div className="flex justify-center lg:mt-10">
             <Link
               href="./products"
               className={`${btn["btn-3"]} font-semibold text-xl text-white hover:bg-[#a37b44d6] flex items-center justify-center  gap-[0.2rem]`}
@@ -180,7 +169,7 @@ export default function ExploreOther() {
                 />
               </svg>
             </Link>
-          </m.div>
+          </div>
         </div>
       </Element>
     </>
