@@ -137,18 +137,7 @@ export default function ExploreCategory() {
             </div>
           </div>
         </div>
-        <m.div
-          initial={{ opacity: 0, x: "-100%" }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.2,
-            delay: 0.8,
-            type: "spring",
-            stiffness: 50,
-          }}
-          className="flex justify-center mt-6 lg:mt-10"
-        >
+        <div className="flex justify-center mt-6 lg:mt-10">
           <Link href="./products">
             <button
               className={`${btn["btn-4"]} w-[260.71px] md:w-[291.71px;] hover:bg-[#a37b44d6] font-semibold text-xl text-white flex items-center justify-center  gap-[0.2rem]`}
@@ -178,7 +167,7 @@ export default function ExploreCategory() {
               </svg>
             </button>
           </Link>
-        </m.div>
+        </div>
       </div>
     </Element>
   );
