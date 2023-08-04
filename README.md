@@ -1,4 +1,4 @@
-## Elegencia (Online Furniture Store) | Built with Next.js and Tailwind CSS.
+## Elegencia (Online Furniture Store) | Built with Next.js and Tailwind.
 
 A Next.js web app with captivating animations, providing a
 seamless user interface for visitors to explore a wide range of
