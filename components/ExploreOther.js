@@ -32,7 +32,16 @@ export default function ExploreOther() {
               whileInView={{ opacity: 1, width: "38.875rem" }}
               viewport={{ once: true }}
               transition={{ duration: 3, delay: 0.5 }}
-              className="lg:block hidden"
+              className="xl:block hidden"
+            >
+              <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
+            </m.div>
+            <m.div
+              initial={{ opacity: 0.7, width: "0.875rem" }}
+              whileInView={{ opacity: 1, width: "23.875rem" }}
+              viewport={{ once: true }}
+              transition={{ duration: 3, delay: 0.5 }}
+              className="lg:block hidden xl:hidden"
             >
               <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
             </m.div>

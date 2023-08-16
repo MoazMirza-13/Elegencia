@@ -15,7 +15,7 @@ export default function ExploreCategory() {
   return (
     <Element name="categories">
       <div className="md:max-w-[84%] max-w-[79%] m-auto lg:mt-44 mt-24">
-        <div className="flex flex-row-reverse items-center gap-4">
+        <div className="flex flex-row-reverse items-center md:gap-4 gap-8">
           <h1
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,7 +30,16 @@ export default function ExploreCategory() {
             whileInView={{ opacity: 1, width: "38.875rem" }}
             viewport={{ once: true }}
             transition={{ duration: 3, delay: 0.5 }}
-            className="lg:block hidden"
+            className="xl:block hidden"
+          >
+            <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
+          </m.div>
+          <m.div
+            initial={{ opacity: 0.7, width: "0.875rem" }}
+            whileInView={{ opacity: 1, width: "23.875rem" }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, delay: 0.5 }}
+            className="lg:block hidden xl:hidden"
           >
             <hr className="w-[38.875rem]i h-[0.388rem] bg-[#D4B78F] rounded-full" />
           </m.div>

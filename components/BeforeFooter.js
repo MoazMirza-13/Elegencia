@@ -123,6 +123,7 @@ export default function BeforeFooter() {
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 1.7 }}
+          className="hidden xl:block"
         >
           <Image priority src={before_footerImg} alt="img" />
         </m.div>
