@@ -47,7 +47,7 @@ export default function ExploreCategory() {
                   priority
                   alt="category"
                   src={categoryImg1}
-                  className="w-full"
+                  className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-white text-center lg:font-semibold lg:text-xl">
@@ -62,7 +62,7 @@ export default function ExploreCategory() {
                   priority
                   alt="category"
                   src={categoryImg3}
-                  className="w-full"
+                  className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-white text-center lg:font-semibold lg:text-xl">
@@ -79,7 +79,7 @@ export default function ExploreCategory() {
                   priority
                   alt="category"
                   src={categoryImg2}
-                  className="w-full"
+                  className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-white text-center lg:font-semibold lg:text-xl">
@@ -94,7 +94,7 @@ export default function ExploreCategory() {
                   priority
                   alt="category"
                   src={categoryImg4}
-                  className="w-full"
+                  className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-white text-center lg:font-semibold lg:text-xl">
@@ -110,7 +110,7 @@ export default function ExploreCategory() {
                     priority
                     alt="category"
                     src={categoryImg5}
-                    className="w-full"
+                    className=""
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-center lg:font-semibold text-sm sm:text-base lg:text-xl">
@@ -125,7 +125,7 @@ export default function ExploreCategory() {
                     priority
                     alt="category"
                     src={categoryImg6}
-                    className="w-full"
+                    className=""
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-white text-center lg:font-semibold lg:text-xl">
