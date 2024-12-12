@@ -6,18 +6,15 @@ furniture items and add them to their cart. The cart
 functionality enables users to easily manage their selections
 and proceed to checkout.
 
-## Libraries
+## Instructions
 
-* Redux as a centralized state management in this application
-* Framer Motion for animation
-* React-scroll for smooth scrolling 
-* Swiper for sliders
-* React-scroll-up for scroll to top button
-* React-toastify for notifications
-* React-modal for pop-up Cart section
-* Formik and yup for form validations
-* React-icons for various icons in app
-* React-helmet for dynamic title of each page
+First, run `npm i` to install dependencies, then run development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Screen Shot
 
